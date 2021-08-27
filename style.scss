@@ -35,25 +35,58 @@ body {
 
 #landingInner {
     display: flex;
+    backdrop-filter: blur(4px);
+    mask-image: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 1) 32px,
+            rgba(0, 0, 0, 1) calc(100% - 32px),
+            rgba(0, 0, 0, 0) 100%
+        ),
+        linear-gradient(
+            to left,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 1) 32px,
+            rgba(0, 0, 0, 1) calc(100% - 32px),
+            rgba(0, 0, 0, 0) 100%
+        );
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-composite: intersect;
+    -webkit-mask-composite: source-in;
+    padding: 32px;
 }
 
 #menu {
-    margin: 0;
-    padding: 0;
+    margin: 0 64px 0 0;
+    padding: 0 32px 0 0;
     color: $purple;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 4px solid $purple;
+
     li {
         list-style: none;
         text-align: right;
+        font-weight: 700;
+        padding: 32px;
+        font-size: 24px;
+
+        i {
+            margin-left: 32px;
+        }
     }
 }
 
 h1 {
     color: $purple;
-    font-size: 5vw;
+    font-size: 96px;
     font-weight: 600;
     margin: 0;
     padding: 0;
-    line-height: 6vw;
+    line-height: 96px;
 
     .black {
         color: #000000;
@@ -62,15 +95,15 @@ h1 {
 
 h2 {
     color: #000000;
-    font-size: 5vw;
+    font-size: 96px;
     font-weight: 600;
     margin: 0;
     padding: 0;
-    line-height: 6vw;
+    line-height: 96px;
 }
 
 .bubble {
-    background: rgba(128, 0, 255, 0.1);
+    background: rgba(128, 0, 255, 0.08);
     width: 150px;
     height: 150px;
     border-radius: 50%;
